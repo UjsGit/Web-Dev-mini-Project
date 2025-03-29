@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coimbatore - Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .destination-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('img/coimbatore.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .destination-header h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .destination-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .itinerary-day {
+            border-left: 3px solid #0056b3;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .itinerary-day h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .highlight-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .instructions {
+            list-style: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+
+        .book-now {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .book-now:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="destination-header">
+        <div>
+            <h1>Coimbatore</h1>
+            <p>Manchester of South India</p>
+        </div>
+    </div>
+
+    <div class="destination-content">
+        <div class="section">
+            <h2>About Coimbatore</h2>
+            <p>Coimbatore, also known as Kovai, is a major industrial city in Tamil Nadu. Known as the "Manchester of South India" for its textile industry, the city is surrounded by the Western Ghats and offers a perfect blend of industry, culture, and nature.</p>
+            <p>The city is famous for its pleasant climate, educational institutions, healthcare facilities, and its proximity to popular hill stations. It's also a major hub for textile manufacturing, engineering, and information technology.</p>
+        </div>
+
+        <div class="section">
+            <h2>Trip Highlights</h2>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <h3>Marudamalai Temple</h3>
+                    <p>Ancient hill temple</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>VOC Park</h3>
+                    <p>Urban recreation space</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Siruvani Falls</h3>
+                    <p>Natural waterfall</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Local Markets</h3>
+                    <p>Shopping and textile hub</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3-Day Itinerary</h2>
+            <div class="itinerary-day">
+                <h3>Day 1: City Exploration</h3>
+                <p>• Morning: Visit Marudamalai Temple</p>
+                <p>• Afternoon: VOC Park and Zoo</p>
+                <p>• Evening: RS Puram shopping</p>
+            </div>
+            <div class="itinerary-day">
+                <h3>Day 2: Nature and Culture</h3>
+                <p>• Morning: Siruvani Falls</p>
+                <p>• Afternoon: CODISSIA Trade Fair</p>
+                <p>• Evening: Local food tour</p>
+            </div>
+            <div class="itinerary-day">
+                <h3>Day 3: Modern Coimbatore</h3>
+                <p>• Morning: Textile factory visit</p>
+                <p>• Afternoon: Brookefields Mall</p>
+                <p>• Evening: Perur Temple</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Travel Instructions</h2>
+            <ul class="instructions">
+                <li>✈️ Nearest Airport: Coimbatore International Airport (CJB)</li>
+                <li>🚊 Local Transport: Buses, autos, and call taxis</li>
+                <li>🌡️ Best Time to Visit: September to March</li>
+                <li>👕 What to Pack: Light clothes, comfortable shoes</li>
+                <li>📱 Emergency Contact: +91 98765 43210</li>
+            </ul>
+            <a href="#" class="book-now">Book Now - ₹15,000</a>
+        </div>
+    </div>
+</body>
+</html> 

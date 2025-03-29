@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorer - Your Gateway to South Indian Adventures</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="main">
+    <div id="box1">
+        <div class="heading-box">
+            <div class="explorer-name">
+                <h1>EXPL<span class="pin-o"></span>RER</h1>
+            </div>
+            <div class="product-contact-about">
+                <div class="a1">
+                    <p>Product</p>
+                </div>
+                <div class="a1" id="contact-link">
+                    <p>Contact</p>
+                </div>
+                <div class="a1" id="about-link">
+                    <p>About</p>
+                </div>
+            </div>
+            <div>
+                <div class="search">
+                    <div>
+                        <select id="city_dropdown" class="city-select">
+                            <option value="">Select a destination</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Tirupati">Tirupati</option>
+                            <option value="Vellore">Vellore</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Bengaluru">Bengaluru</option>
+                            <option value="Mysore">Mysore</option>
+                            <option value="Vijayawada">Vijayawada</option>
+                            <option value="Kurnool">Kurnool</option>
+                        </select>
+                        <button id="search_button">Search</button>
+                    </div>                  
+                </div>
+            </div>
+            <div class="login" onclick="window.open('login.html')">
+                <div class="p">
+                    <p>Login</p>
+                </div>
+            </div>
+        </div>
+        <div class="photo-text">
+            <div class="text">
+                <h1 class="text1" id="mainTitle">Discover the Soul
+of South India!</h1>
+                <p class="text2">Explore the unexplored destinations of India with our curated travel experiences.</p>
+                <a href="#" class="button">Get Started</a>
+            </div>
+            <div class="photo-box">
+                <div class="photo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.getElementById('mainTitle');
+            const text = title.textContent;
+            title.textContent = '';
+            
+            const letters = text.split('');
+            letters.forEach((letter, i) => {
+                const span = document.createElement('span');
+                span.textContent = letter;
+                span.style.animationDelay = `${i * 0.05}s`;
+                title.appendChild(span);
+            });
+
+            // Add smooth scrolling for navigation links
+            const aboutLink = document.getElementById('about-link');
+            const contactLink = document.getElementById('contact-link');
+            
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const aboutSection = document.getElementById('about-section');
+                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                aboutSection.classList.add('highlight-section');
+                setTimeout(() => {
+                    aboutSection.classList.remove('highlight-section');
+                }, 2000);
+            });
+
+            contactLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact-section');
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                contactSection.classList.add('highlight-section');
+                setTimeout(() => {
+                    contactSection.classList.remove('highlight-section');
+                }, 2000);
+            });
+
+            // Search functionality with dropdown
+            const cityDropdown = document.getElementById('city_dropdown');
+            const searchButton = document.getElementById('search_button');
+            const destinationCards = document.querySelectorAll('.destination-card');
+
+            function searchDestination() {
+                const selectedCity = cityDropdown.value.trim();
+                let found = false;
+
+                destinationCards.forEach(card => {
+                    const cardTitle = card.querySelector('h3').textContent;
+                    card.classList.remove('highlight', 'no-match');
+
+                    if (selectedCity && cardTitle === selectedCity) {
+                        card.classList.add('highlight');
+                        found = true;
+                        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (selectedCity) {
+                        card.classList.add('no-match');
+                    }
+                });
+
+                if (selectedCity && !found) {
+                    cityDropdown.style.borderColor = '#dc3545';
+                    setTimeout(() => {
+                        cityDropdown.style.borderColor = '#ccc';
+                    }, 1000);
+                }
+            }
+
+            // Search button click
+            searchButton.addEventListener('click', searchDestination);
+
+            // Also search when dropdown value changes
+            cityDropdown.addEventListener('change', searchDestination);
+        });
+    </script>
+        <div id="box2">
+            <div class="heading-box2">
+                <h1>Popular Destination✈️</h1>
+                <p>Vacation to make experience enjoyable in South India</p>
+            </div>
+            <div class="photo-container">
+                <!-- First row destinations -->
+                <a href="chennai.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/shutterstock_1073721995_20191213105915_20191213105938.jpg" alt="Chennai Marina Beach" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Chennai</h3>
+                            <p class="destination-desc">Marina Beach & Culture</p>
+                            <p class="duration">3 Days 2 Nights</p>
+                            <p class="price">₹12,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="tirupati.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/tirupati.jpg" alt="Tirupati Temple" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Tirupati</h3>
+                            <p class="destination-desc">Temple City</p>
+                            <p class="duration">2 Days 1 Night</p>
+                            <p class="price">₹8,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="vellore.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/vellore.jpg" alt="Vellore Fort" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Vellore</h3>
+                            <p class="destination-desc">Fort & Heritage</p>
+                            <p class="duration">2 Days 1 Night</p>
+                            <p class="price">₹7,500</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="coimbatore.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/coimbatore.jpg" alt="Coimbatore" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Coimbatore</h3>
+                            <p class="destination-desc">Industrial Beauty</p>
+                            <p class="duration">3 Days 2 Nights</p>
+                            <p class="price">₹11,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Middle emoji -->
+                <div class="middle-emoji">
+                    <img src="img/travel quote.png" alt="Travel Quote" />
+                </div>
+
+                <!-- Second row destinations -->
+                <a href="bengaluru.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/bangaluru.avif" alt="Bengaluru" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Bengaluru</h3>
+                            <p class="destination-desc">Garden City & Tech Hub</p>
+                            <p class="duration">4 Days 3 Nights</p>
+                            <p class="price">₹15,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mysore.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/mysore.jpeg" alt="Mysore Palace" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Mysore</h3>
+                            <p class="destination-desc">Royal Heritage</p>
+                            <p class="duration">3 Days 2 Nights</p>
+                            <p class="price">₹13,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="vijayawada.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/vijaywada.avif" alt="Vijayawada" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Vijayawada</h3>
+                            <p class="destination-desc">Cultural Marvel</p>
+                            <p class="duration">2 Days 1 Night</p>
+                            <p class="price">₹9,000</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="kurnool.html" class="card-link">
+                    <div class="destination-card">
+                        <img src="img/kurnool.jpeg" alt="Kurnool" class="destination-image">
+                        <div class="destination-info">
+                            <h3>Kurnool</h3>
+                            <p class="destination-desc">Historical Gateway</p>
+                            <p class="duration">3 Days 2 Nights</p>
+                            <p class="price">₹10,000</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="bs1">
+                <div class="india-map-container">
+                    <img src="img/india-map-img.png" alt="Map of India" class="india-map">
+                    <a href="chennai.html" class="location-pin chennai">
+                        <div class="location-info">
+                            <h3>Chennai</h3>
+                            <p>Capital of Tamil Nadu</p>
+                        </div>
+                    </a>
+                    <a href="vellore.html" class="location-pin vellore">
+                        <div class="location-info">
+                            <h3>Vellore</h3>
+                            <p>Historical City</p>
+                        </div>
+                    </a>
+                    <a href="tirupati.html" class="location-pin tirupati">
+                        <div class="location-info">
+                            <h3>Tirupati</h3>
+                            <p>Temple City</p>
+                        </div>
+                    </a>
+                    <a href="coimbatore.html" class="location-pin coimbatore">
+                        <div class="location-info">
+                            <h3>Coimbatore</h3>
+                            <p>Manchester of South India</p>
+                        </div>
+                    </a>
+                    <a href="salem.html" class="location-pin salem">
+                        <div class="location-info">
+                            <h3>Salem</h3>
+                            <p>Steel City</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="features-container">
+                    <h2>Experience South India</h2>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-route"></i>
+                            <h3>Curated Journeys</h3>
+                            <p>Handpicked destinations and carefully planned itineraries</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h3>Local Experience</h3>
+                            <p>Authentic cultural experiences with local guides</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-wallet"></i>
+                            <h3>Best Value</h3>
+                            <p>Affordable adventures without compromising quality</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-headset"></i>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock assistance throughout your journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add Footer Section -->
+    <footer id="about-section" class="footer">
+        <div class="footer-content">
+            <div class="about-us">
+                <h2>About Us</h2>
+                <p>Welcome to Explorer - Your Gateway to South Indian Adventures!</p>
+                <div class="about-details">
+                    <div class="about-column">
+                        <h3>Our Mission</h3>
+                        <p>To provide unforgettable travel experiences across South India's most beautiful destinations, combining cultural richness with modern comfort.</p>
+                    </div>
+                    <div class="about-column">
+                        <h3>Why Choose Us</h3>
+                        <ul>
+                            <li>Expertly Curated Trips</li>
+                            <li>Local Experience</li>
+                            <li>24/7 Support</li>
+                            <li>Best Price Guarantee</li>
+                        </ul>
+                    </div>
+                    <div class="about-column">
+                        <h3>Contact Info</h3>
+                        <div id="contact-section" class="contact-info">
+                            <p>📧 info@explorer.com</p>
+                            <p>📞 +91 98765 4320</p>
+                            <p>🏢 Vellore, Tamil Nadu</p>
+                            <p>🔗 <a href="https://www.linkedin.com/in/neel-gupta-83577928a" target="_blank" class="linkedin-link"><i class="fab fa-linkedin"></i> Neel Gupta</a></p>
+                            <p>🔗 <a href="https://www.linkedin.com/in/ujjwal-singh-70158528b" target="_blank" class="linkedin-link"><i class="fab fa-linkedin"></i> Ujjwal Singh</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

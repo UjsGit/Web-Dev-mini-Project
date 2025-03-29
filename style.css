@@ -1,0 +1,1069 @@
+body {
+    background-color: rgb(176, 236, 236);
+}
+
+#box1 {
+    background-image: url("img/main panel.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#box1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.7) 30%,
+        rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+.heading-box {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    gap: 20px;
+}
+
+.explorer-name {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 20%;
+}
+
+.product-contact-about {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    gap: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search div {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.city-select {
+    padding: 10px 35px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.city-select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+.city-select option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#search_button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#search_button:hover {
+    background-color: #45a049;
+}
+
+.highlight {
+    border: 2px solid #4CAF50 !important;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.no-match {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.login {
+    display: flex;
+    width: 10%;
+    min-width: 80px;
+    height: 35px;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #1190f8, #0b4db1);
+    cursor: pointer;
+    justify-content: center;
+    transition: 0.3s ease-out;
+}
+
+.login:hover {
+    box-shadow: 4px 4px 6px rgba(15, 9, 9, 0.2);
+    transform: translateX(-5px) scale(1.02);
+}
+
+.login .p {
+    color: white;    
+    font-size: 14px;
+    white-space: nowrap;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0 10px;
+}
+
+.a1:hover{
+    font-weight: 600;
+}
+.a1 h2{
+    text-shadow: 3px 3px 3px 3px black;
+}
+.text {
+    width: 50%;
+    padding: 0 60px;
+    animation: fadeInText 1.5s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+.text1 {
+    font-size: 65px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    white-space: pre-line;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.text1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: revealLetter 0.05s ease-out forwards;
+}
+
+/* Style for the first line "Discover India's Hidden" */
+.text1 span.first-line {
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for "Treasures" */
+.text1 span.second-line {
+    background: linear-gradient(45deg, #FFD93D, #FF6B6B, #4ECDC4);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    font-size: 75px;
+    margin-top: 10px;
+}
+
+.text1 .line-break {
+    width: 100%;
+    display: block;
+    height: 20px;
+}
+
+@keyframes revealLetter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.text2 {
+    color: #4a4a4a;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 90%;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards 1.5s;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: #0056b3;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.button:hover {
+    background: #007bff;
+}
+
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 86, 179, 0.2);
+}
+
+/* Add a subtle shine effect */
+.button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.button:hover::after {
+    opacity: 1;
+    animation: shine 1.5s ease-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateX(100%);
+    }
+}
+
+.pa-button {
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#main{
+    background: linear-gradient(to bottom, #edeff1, #f0f2f5);
+    margin:100px;
+    border-radius: 10px;
+}
+#box2{
+    background: linear-gradient(to bottom, #edeff1, white);
+    /* margin-left: 100px; */
+    margin-top:100px;
+    margin-right: 100px;
+    border-radius: 10px;
+}
+.heading-box2{
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+.heading-box2 h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #0056b3, #00a0e4);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInScale 1s ease-out forwards;
+}
+.heading-box2 h1::after {
+    content: "✈️";
+    font-size: 40px;
+    margin-left: 15px;
+    display: inline-block;
+    animation: flyPlane 3s infinite ease-in-out;
+}
+.heading-box2 p {
+    font-size: 20px;
+    color: #666;
+    margin: 0;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes flyPlane {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.visiting-places{
+    display: flex;
+    justify-content: space-around;
+}
+.s1{
+    width: 20%;
+    /* margin-right:2%; */
+    height:400px;
+    background-color: rgb(255, 249, 249);
+    border-radius: 20px;
+    /* display: flex;    */
+    margin-left: 80px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    /* border: 1px solid black; */
+}
+.imgs1{
+    margin:2px;
+    height:60%;
+    width: 98%;
+    border-radius: 20px;
+}
+.imgs1 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+.s1 p{
+    color: gray;
+}
+.price{
+    color:rgb(150, 228, 150);
+}
+.box3 {
+    display: flex;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+.bs1 {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+}
+.bs1 h1 {
+    margin-bottom: 15px;
+    color: #333;
+}
+.bs1 p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    }
+.bs4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgdiv{
+    width: 60%;
+    height: 96%;
+    background-image: url("adult-adventure-backlit-915972.jpg");
+    border-radius: 50%;
+}
+.s1:hover{
+    background-color:#94c3eb;
+    box-shadow: 20px 20px 20px gray;
+    transform: scale(1.1);
+}
+
+.explorer-name h1 {
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #0056b3, #00a8ff, #0056b3);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 4px 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    transition: all 0.4s ease-in-out;
+    animation: gradientFlow 3s ease infinite;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.explorer-name h1 .pin-o {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #0056b3, #00a8ff);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    margin: 0 3px;
+    vertical-align: middle;
+    animation: pinPulse 2s infinite;
+}
+
+.explorer-name h1:hover {
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.india-map-container {
+    position: relative;
+    width: 50%;
+    height: 600px;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.india-map {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Adjusted positions to appear on the map */
+.chennai {
+    top: 42%;    /* Chennai - Eastern coast */
+    left: 45%;
+}
+
+.vellore {
+    top: 38%;    /* Vellore - Northwest of Chennai */
+    left: 42%;
+}
+
+.tirupati {
+    top: 34%;    /* Tirupati - Further northwest, in AP */
+    left: 41%;
+}
+
+.coimbatore {
+    top: 46%;    /* Coimbatore - Southwest TN */
+    left: 38%;
+}
+
+.salem {
+    top: 42%;    /* Salem - Between Coimbatore and Vellore */
+    left: 40%;
+}
+
+.location-pin {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(45deg, #0056b3, #00a8ff);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+    text-decoration: none;
+    display: block;
+}
+
+.location-pin::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.location-pin:hover {
+    transform: rotate(-45deg) scale(1.3);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.location-info {
+    position: absolute;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 100;
+    font-size: 12px;
+    color: #333;
+    min-width: 100px;
+    transform: rotate(45deg);
+    top: -25px;
+    left: 20px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.location-pin:hover .location-info {
+    display: block;
+}
+
+.location-info h3 {
+    margin: 0 0 5px 0;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.location-info p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.product-contact-about .a1 {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.product-contact-about .a1:hover {
+    color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.highlight-section {
+    animation: highlightPulse 2s ease;
+}
+
+@keyframes highlightPulse {
+    0% {
+        background-color: transparent;
+    }
+    25% {
+        background-color: rgba(0, 86, 179, 0.1);
+    }
+    75% {
+        background-color: rgba(0, 86, 179, 0.1);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.contact-info {
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#about-section.highlight-section,
+#contact-section.highlight-section {
+    background-color: rgba(0, 86, 179, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.2);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Remove the sliding reveal effect */
+.text::after {
+    display: none;
+}
+
+.text {
+    width: 50%;
+    padding: 0 60px;
+    animation: fadeInText 1.5s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.middle-emoji {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.middle-emoji img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: floatQuote 6s ease-in-out infinite;
+    position: relative;
+}
+
+.middle-emoji::before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background: linear-gradient(45deg, 
+        rgba(0, 123, 255, 0.2),
+        rgba(0, 210, 255, 0.2),
+        rgba(0, 255, 210, 0.2)
+    );
+    border-radius: 15px;
+    filter: blur(15px);
+    animation: glowEffect 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes floatQuote {
+    0%, 100% {
+        transform: 
+            translateY(0) 
+            rotateX(0deg) 
+            rotateY(0deg) 
+            scale(1);
+    }
+    25% {
+        transform: 
+            translateY(-15px) 
+            rotateX(5deg) 
+            rotateY(-5deg) 
+            scale(1.02);
+    }
+    50% {
+        transform: 
+            translateY(0) 
+            rotateX(-2deg) 
+            rotateY(5deg) 
+            scale(1);
+    }
+    75% {
+        transform: 
+            translateY(15px) 
+            rotateX(5deg) 
+            rotateY(-2deg) 
+            scale(1.02);
+    }
+}
+
+@keyframes glowEffect {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Remove shine effect and its animation */
+.middle-emoji::after {
+    display: none;
+}
+
+/* Adjust card positions for 3-2-3 layout */
+.destination-card:nth-child(n+4):nth-child(-n+5) {
+    grid-row: 2;
+}
+
+.destination-card:nth-child(4) {
+    grid-column: 1;
+}
+
+.destination-card:nth-child(5) {
+    grid-column: 3;
+}
+
+.destination-card:nth-child(n+6) {
+    grid-row: 3;
+}
+
+/* Style for the last row with 2 cards */
+.photo-container > *:nth-last-child(-n+2) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destination-card {
+    width: 100%;
+    max-width: 350px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+}
+
+/* Adjust the hover effect */
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Make sure images maintain aspect ratio */
+.destination-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.destination-card:hover .destination-image {
+    transform: scale(1.05);
+}
+
+.destination-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.destination-info h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.destination-desc {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+}
+
+.duration {
+    color: #0056b3;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.price {
+    color: #28a745;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.footer {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    border-radius: 20px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-us {
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #0056b3, #00a0e4);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.about-us > p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.about-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-column:hover {
+    transform: translateY(-5px);
+}
+
+.about-column h3 {
+    font-size: 24px;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.about-column p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-column ul li {
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.about-column ul li::before {
+    content: '✓';
+    color: #28a745;
+    position: absolute;
+    left: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Update the About link in the header to show it's clickable */
+.product-contact-about .a1:nth-child(3) {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-contact-about .a1:nth-child(3):hover {
+    color: #0056b3;
+}
+
+.destination-card.highlight {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 86, 179, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 6px 25px rgba(0, 86, 179, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(0, 86, 179, 0.5);
+    }
+    100% {
+        box-shadow: 0 6px 25px rgba(0, 86, 179, 0.3);
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.features-container {
+    width: 50%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+.features-container h2 {
+    color: #0056b3;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .bs1 {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .india-map-container,
+    .features-container {
+        width: 100%;
+    }
+
+    .india-map-container {
+        height: 400px;
+    }
+}

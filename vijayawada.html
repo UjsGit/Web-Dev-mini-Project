@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijayawada - Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .destination-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('img/vijaywada.avif');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .destination-header h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .destination-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .itinerary-day {
+            border-left: 3px solid #0056b3;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .itinerary-day h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .highlight-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .instructions {
+            list-style: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions li:last-child {
+            border-bottom: none;
+        }
+
+        .book-now {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .book-now:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="destination-header">
+        <div>
+            <h1>Vijayawada</h1>
+            <p>The Business Capital of Andhra Pradesh</p>
+        </div>
+    </div>
+
+    <div class="destination-content">
+        <div class="section">
+            <h2>About Vijayawada</h2>
+            <p>Vijayawada, situated on the banks of the Krishna River, is one of the largest cities in Andhra Pradesh. Known for its historical importance and modern development, it serves as a major commercial and cultural hub.</p>
+            <p>The city is famous for its ancient caves, temples, and the Prakasam Barrage. It's also an important center for agriculture, business, and education in the region.</p>
+        </div>
+
+        <div class="section">
+            <h2>Trip Highlights</h2>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <h3>Kanaka Durga Temple</h3>
+                    <p>Ancient hilltop temple</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Prakasam Barrage</h3>
+                    <p>Iconic river dam</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Undavalli Caves</h3>
+                    <p>4th-century rock-cut caves</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Bhavani Island</h3>
+                    <p>River island recreation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3-Day Itinerary</h2>
+            <div class="itinerary-day">
+                <h3>Day 1: Cultural Heritage</h3>
+                <p>• Morning: Visit Kanaka Durga Temple</p>
+                <p>• Afternoon: Explore Undavalli Caves</p>
+                <p>• Evening: Prakasam Barrage sunset</p>
+            </div>
+            <div class="itinerary-day">
+                <h3>Day 2: Nature & Recreation</h3>
+                <p>• Morning: Visit Bhavani Island</p>
+                <p>• Afternoon: Water sports activities</p>
+                <p>• Evening: River cruise</p>
+            </div>
+            <div class="itinerary-day">
+                <h3>Day 3: Modern Vijayawada</h3>
+                <p>• Morning: Visit VMC Gandhi Hill</p>
+                <p>• Afternoon: Shopping at PVP Square</p>
+                <p>• Evening: Local cuisine experience</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Travel Instructions</h2>
+            <ul class="instructions">
+                <li>✈️ Nearest Airport: Vijayawada International Airport (VGA)</li>
+                <li>🚊 Local Transport: Buses, auto-rickshaws, and taxis available</li>
+                <li>🌡️ Best Time to Visit: October to March</li>
+                <li>👕 What to Pack: Light cotton clothes, comfortable footwear</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
