@@ -197,9 +197,74 @@
                 <li>✈️ Nearest Airport: Vijayawada International Airport (VGA)</li>
                 <li>🚊 Local Transport: Buses, auto-rickshaws, and taxis available</li>
                 <li>🌡️ Best Time to Visit: October to March</li>
-                <li>👕 What to Pack: Light cotton clothes, comfortable footwear</li>
+                <li>👕 What to Pack: Light clothes, comfortable shoes</li>
+                <li>📱 Emergency Contact: +91 98765 43210</li>
             </ul>
+            <a href="#" class="book-now" onclick="bookNow()">Book Now - ₹9,000</a>
         </div>
     </div>
+
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-content">
+            <span class="close-booking" onclick="closeBookingModal()">&times;</span>
+            <div id="bookingStep1">
+                <div class="booking-icon">🎉</div>
+                <h2 class="booking-success">Booking Successful!</h2>
+                <div class="booking-details">
+                    <h3>Booking Details</h3>
+                    <p><strong>Destination:</strong> Vijayawada</p>
+                    <p><strong>Duration:</strong> 2 Days 1 Night</p>
+                    <p><strong>Package:</strong> Cultural Heritage Tour</p>
+                    <p><strong>Amount:</strong> ₹9,000</p>
+                </div>
+                <button class="proceed-pay" onclick="proceedToPayment()">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get modal element
+        const bookingModal = document.getElementById('bookingModal');
+
+        // Function to handle booking
+        function bookNow() {
+            bookingModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Function to close modal
+        function closeBookingModal() {
+            bookingModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == bookingModal) {
+                closeBookingModal();
+            }
+        }
+
+        // Function to proceed to payment
+        function proceedToPayment() {
+            // Here you would typically redirect to a payment gateway
+            // For demo purposes, we'll just show an alert
+            alert('Redirecting to payment gateway...');
+            closeBookingModal();
+        }
+
+        // Add keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && bookingModal.style.display === 'block') {
+                closeBookingModal();
+            }
+        });
+
+        // Update all book now buttons to use the new functionality
+        document.querySelectorAll('.book-now').forEach(button => {
+            button.setAttribute('onclick', 'bookNow()');
+            button.href = 'javascript:void(0);';
+        });
+    </script>
 </body>
 </html> 

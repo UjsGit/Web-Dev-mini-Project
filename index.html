@@ -43,7 +43,7 @@
                     </div>                  
                 </div>
             </div>
-            <div class="login" onclick="window.open('login.html')">
+            <div class="login" onclick="openLoginModal()">
                 <div class="p">
                     <p>Login</p>
                 </div>
@@ -52,7 +52,7 @@
         <div class="photo-text">
             <div class="text">
                 <h1 class="text1" id="mainTitle">Discover the Soul
-of South India!</h1>
+                of South India!</h1>
                 <p class="text2">Explore the unexplored destinations of India with our curated travel experiences.</p>
                 <a href="#" class="button">Get Started</a>
             </div>
@@ -251,37 +251,7 @@ of South India!</h1>
         <div class="box3">
             <div class="bs1">
                 <div class="india-map-container">
-                    <img src="img/india-map-img.png" alt="Map of India" class="india-map">
-                    <a href="chennai.html" class="location-pin chennai">
-                        <div class="location-info">
-                            <h3>Chennai</h3>
-                            <p>Capital of Tamil Nadu</p>
-                        </div>
-                    </a>
-                    <a href="vellore.html" class="location-pin vellore">
-                        <div class="location-info">
-                            <h3>Vellore</h3>
-                            <p>Historical City</p>
-                        </div>
-                    </a>
-                    <a href="tirupati.html" class="location-pin tirupati">
-                        <div class="location-info">
-                            <h3>Tirupati</h3>
-                            <p>Temple City</p>
-                        </div>
-                    </a>
-                    <a href="coimbatore.html" class="location-pin coimbatore">
-                        <div class="location-info">
-                            <h3>Coimbatore</h3>
-                            <p>Manchester of South India</p>
-                        </div>
-                    </a>
-                    <a href="salem.html" class="location-pin salem">
-                        <div class="location-info">
-                            <h3>Salem</h3>
-                            <p>Steel City</p>
-                        </div>
-                    </a>
+                    <img src="img/pin map.png" alt="Map of India with Destination Pins" class="india-map">
                 </div>
                 <div class="features-container">
                     <h2>Experience South India</h2>
@@ -348,5 +318,157 @@ of South India!</h1>
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div class="login-container">
+                <h2>Welcome Back!</h2>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <button type="submit" class="login-btn">Sign In</button>
+                    <div class="form-footer">
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <span class="divider">|</span>
+                        <a href="#" class="create-account">Create Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this before the closing body tag -->
+    <script>
+        // Get modal elements
+        const modal = document.getElementById('loginModal');
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        // Open login modal
+        function openLoginModal() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            usernameInput.focus(); // Focus on username field
+        }
+
+        // Close login modal
+        function closeLoginModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+            // Clear form
+            loginForm.reset();
+            clearErrors();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeLoginModal();
+            }
+        }
+
+        // Handle form submission
+        function handleLogin(event) {
+            event.preventDefault();
+            clearErrors();
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            let isValid = true;
+
+            // Simple validation
+            if (username === '') {
+                showError(usernameInput, 'Username is required');
+                isValid = false;
+            }
+
+            if (password === '') {
+                showError(passwordInput, 'Password is required');
+                isValid = false;
+            } else if (password.length < 6) {
+                showError(passwordInput, 'Password must be at least 6 characters');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Add loading state
+                const loginBtn = document.querySelector('.login-btn');
+                loginBtn.innerHTML = 'Signing in...';
+                loginBtn.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    // For demo purposes, accept any valid input
+                    const loginSuccess = true;
+
+                    if (loginSuccess) {
+                        showSuccessMessage();
+                        setTimeout(() => {
+                            closeLoginModal();
+                            updateLoginState();
+                        }, 1500);
+                    } else {
+                        showError(passwordInput, 'Invalid username or password');
+                        loginBtn.innerHTML = 'Sign In';
+                        loginBtn.disabled = false;
+                    }
+                }, 1000);
+            }
+        }
+
+        // Show error message
+        function showError(input, message) {
+            const formGroup = input.parentElement;
+            formGroup.classList.add('error');
+            
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerText = message;
+            formGroup.appendChild(errorDiv);
+        }
+
+        // Clear all errors
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(error => error.remove());
+            document.querySelectorAll('.form-group.error').forEach(group => group.classList.remove('error'));
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            const loginContainer = document.querySelector('.login-container');
+            loginContainer.innerHTML = `
+                <div style="text-align: center; color: #28a745;">
+                    <h2>Welcome!</h2>
+                    <p>Login successful!</p>
+                </div>
+            `;
+        }
+
+        // Update login state
+        function updateLoginState() {
+            const loginButton = document.querySelector('.login .p');
+            loginButton.innerHTML = '<p>My Account</p>';
+        }
+
+        // Add keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeLoginModal();
+            }
+        });
+    </script>
 </body>
 </html>
